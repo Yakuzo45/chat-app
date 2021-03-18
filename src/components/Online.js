@@ -1,4 +1,5 @@
 import './Online.css';
+import PropTypes from 'prop-types';
 
 function Online(param)
 {
@@ -18,5 +19,9 @@ function Online(param)
         );
     }
 }
+
+Online.propTypes = {
+    isOnline: PropTypes.bool.isRequired,
+};
 
 export default Online;

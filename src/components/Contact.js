@@ -1,21 +1,25 @@
+import PropTypes from 'prop-types';
 import './Contact.css';
 import Online from './Online';
 
-function Contact()
+function Contact(params)
 {
-    const name = 'Devon Beck';
-    const avatar = 'https://randomuser.me/api/portraits/men/20.jpg';
-    const isOnline = true;
-
     return (
         <div className="Contact">
-            <img src={avatar} className="avatar"/>
+            <img src={params.avatar} className="avatar"/>
             <div>
-                <p className="name">{name}</p>
-                <Online isOnline={isOnline}/>
+                <p className="name">{params.name}</p>
+                <Online isOnline={params.isOnline}/>
             </div>
         </div>
     );
 }
+
+Contact.propTypes = {
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+};
+
 
 export default Contact;
